@@ -1,1 +1,1 @@
-# appleclone563.github.io
+# Clone of the apple.com Homepage
