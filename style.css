@@ -49,6 +49,7 @@ html, body {
 .navbar ul li{
     padding: 5px;
     font-size: 11px;
+    background-color: rgb(240, 238, 236);
 }
 
 .navbar-right {
