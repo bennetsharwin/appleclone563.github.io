@@ -1,0 +1,418 @@
+* {
+    font-family: sans-serif;
+    background-color: #f5f4f4;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.Mainparent {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 24px;
+    background: rgb(240, 238, 236);
+    min-height: 44px;
+}
+
+.navbar ul{
+    /*flex: 1 1 auto;*/
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    
+    gap: 10px;
+    background-color: rgb(240, 238, 236);
+}
+
+.navbar-left {
+    /*flex: 0 0 auto;*/
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li{
+    padding: 5px;
+    font-size: 11px;
+}
+
+.navbar-right {
+    /*flex: 0 0 auto;*/
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* this is for the dropdown menu */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    color: #222;
+    margin: 8px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between; /* Push logo left, icons/hamburger right */
+    }
+    .navbar-right {
+        margin-left: auto; /* Pushes .navbar-right to the far right */
+    }
+    .navbar ul{
+        display: none; /*Hide the actual navbar */
+        flex-direction: column;
+        background: #ffffff;
+        position: absolute;
+        top: 40px;
+        margin-top: 10px;
+        left: 0;
+        width: 100%;
+        box-shadow: 1px 2px 8px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
+
+    .navbar ul li {
+        font-size: 18px; /* increase font in dropdown menu */
+    }
+    .navbar ul li:hover {
+        background-color: rgb(250, 234, 206);
+    }
+    .navbar ul.active {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+/* home section */
+.home {
+    /* background-image: url('/Apple/apple-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    width: auto; */ /*We will use the <img> property because nothing overlaying the image */
+    height: auto;
+    width: auto;
+}
+
+.homeContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+.homeContent h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    font-size: clamp(1.1rem, 4vw, 1.7rem);
+    text-align: center;
+}
+
+.homeContent .home-btns {
+    display: flex;
+    gap: 16px;
+}
+
+.homeContent .home-btns button{
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+}
+
+.homeContent .home-btns .btn-1 {
+    background-color: rgb(0, 140, 255);
+    border: none;
+    font-size: 15px;
+    color: white;
+}
+
+.homeContent .home-btns .btn-2 {
+    border: 2px solid rgb(0, 140, 255);
+    color: rgb(0, 140, 255);
+    
+}
+
+.homeContent .home-btns .btn-2:hover {
+    background-color: rgb(0, 140, 255);
+    color: white;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: scroll;
+    justify-content: center;
+    margin-top: 60px;
+    padding-bottom: 20px; 
+}
+
+.carousel-item {
+    background-color: #fff; 
+    transition: 0.6s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    border-radius: 15px; 
+    height: fit-content;
+    align-items: center; /* Changed from flex-start to center */
+    width: 300px; 
+    margin: 0 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; /* Hide overflow for rounded corners */
+    padding-bottom: 20px; 
+}
+
+.carousel-item:hover {
+    width: 320px;
+    height: auto;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto; 
+    border-top-left-radius: 15px; 
+    border-top-right-radius: 15px; 
+}
+
+.carousel-item h2{
+    background-color: #fff; 
+    font-weight: bold;
+    font-size: 24px; 
+    margin: 20px 20px 5px 20px; 
+    color: #000; 
+    text-align: center; /* Ensure text is centered */
+}
+
+.carousel-item p {
+    background-color: #fff; 
+    font-size: 18px; 
+    font-weight: normal;
+    margin: 0 20px 15px 20px; 
+    color: #333; 
+    text-align: center; /* Ensure text is centered */
+}
+
+.carousel-item .learn-more {
+    display: inline-block; 
+    background-color: rgb(0, 140, 255); 
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px; 
+    text-decoration: none; 
+    margin: 0 20px 20px 20px; 
+    font-size: 14px; 
+    font-weight: bold;
+}
+
+.carousel-item .learn-more:hover {
+    opacity: 0.9; 
+}
+
+
+/* Footer Container */
+.apple-footer {
+    background-color: #f5f5f7; /* Consistent light background */
+    padding: 0 20px; /* Padding on left/right for edges */
+    font-size: 0.75em; /* Smaller font size for footer text */
+    color: #6e6e73; /* Lighter grey for general footer text */
+    border-top: 1px solid #d2d2d7; /* Subtle line at the top of the footer */
+}
+
+.footer-section {
+    max-width: 980px; /* Max width for content, adjust as needed */
+    margin: 0 auto; /* Center the content */
+    padding: 17px 0; /* Vertical padding for each section */
+    border-bottom: 1px solid #d2d2d7; /* Separator for sections */
+}
+
+.footer-section:last-child {
+    border-bottom: none; /* No border for the last section */
+}
+
+/* Top Notes Section */
+.footer-top-notes p {
+    margin-bottom: 8px; /* Space between paragraphs */
+}
+
+.footer-top-notes p:last-child {
+    margin-bottom: 0;
+}
+
+/* Navigation Columns Section */
+.footer-nav-columns {
+    display: grid;
+    /* On larger screens, create 5 columns. Adjust column widths as needed. */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px; /* Gap between columns */
+}
+
+.footer-column h3 {
+    font-size: 0.75em; /* Match main text size */
+    font-weight: 600; /* Slightly bolder for headings */
+    color: #1d1d1f; /* Darker color for headings */
+    margin-bottom: 0.8em; /* Space below heading */
+}
+
+.footer-column ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin-bottom: 1.2em; /* Space between list groups */
+}
+
+.footer-column ul:last-child {
+    margin-bottom: 0; /* No bottom margin for the last list in a column */
+}
+
+.footer-column li {
+    margin-bottom: 0.6em; /* Space between list items */
+}
+
+.footer-column a {
+    color: #6e6e73; /* Link color */
+    text-decoration: none; /* No underline */
+    transition: color 0.2s ease-in-out; /* Smooth transition on hover */
+}
+
+.footer-column a:hover {
+    color: #1d1d1f; /* Darken link on hover */
+}
+
+/* Bottom Info Section */
+.footer-bottom-info {
+    padding-bottom: 20px; /* More padding at the very bottom */
+}
+
+.store-locator {
+    margin-bottom: 8px;
+    padding-bottom: 8px; /* Space before the legal line */
+    border-bottom: 1px solid #d2d2d7; /* Separator line */
+}
+
+.store-locator a {
+    color: #0070c9; /* Apple blue for specific links */
+    text-decoration: none;
+}
+
+.store-locator a:hover {
+    text-decoration: underline;
+}
+
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: space-between; /* Space out copyright and legal links */
+    align-items: center;
+}
+
+.footer-legal p {
+    margin: 0; /* Remove default paragraph margins */
+}
+
+.legal-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.legal-links li {
+    margin-right: 10px; /* Space between legal links */
+    padding-right: 10px; /* Space and separator */
+    border-right: 1px solid #6e6e73; /* Vertical separator */
+}
+
+.legal-links li:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none; /* No border for the last link */
+}
+
+.legal-links a {
+    color: #6e6e73;
+    text-decoration: none;
+}
+
+.legal-links a:hover {
+    text-decoration: underline;
+}
+
+.country-selector {
+    margin-left: auto; /* Pushes the country selector to the far right */
+    white-space: nowrap; /* Prevents country selector from wrapping */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-nav-columns {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    }
+    .footer-column:nth-child(4), /* The fourth column (For Business) */
+    .footer-column:nth-child(5) { /* The fifth column (Apple Values) */
+        /* You might want to combine these or adjust their order */
+        /* For now, just setting them to span 1 column */
+    }
+
+    .footer-legal {
+        flex-direction: column; /* Stack legal items vertically */
+        align-items: flex-start; /* Align to the start */
+    }
+
+    .legal-links {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .country-selector {
+        margin-left: 0; /* Remove auto-margin to align with others */
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-nav-columns {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .footer-column ul {
+        margin-bottom: 0.5em; /* Less space between lists when stacked */
+    }
+    .footer-section {
+        padding: 10px 0;
+    }
+    .footer-column h3 {
+        margin-top: 1em; /* Add some space above headings when stacked */
+    }
+    .legal-links {
+        flex-direction: column; /* Stack legal links vertically too */
+    }
+    .legal-links li {
+        margin-right: 0;
+        padding-right: 0;
+        border-right: none;
+        margin-bottom: 5px; /* Space between stacked legal links */
+    }
+    .legal-links li:last-child {
+        margin-bottom: 0;
+    }
+}
